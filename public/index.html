@@ -28,8 +28,25 @@
       </div>
       <div class="card-body">
 
-        <div class="jumbotron text-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col opacity-75">
+              <label for="translationSource" class="form-label">Zu übersetzender Text</label>
+              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="sourceLanguage">
+                <option selected>Bitte Sprache wählen</option>
+              </select>
+              <textarea class="form-control" id="translationSource" rows="10"></textarea>
+            </div>
+            <div class="col opacity-75">
+              <label for="translationTarget" class="form-label">Übersetzer Text</label>
+              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="targetLanguage">
+                <option selected>Bitte Sprache wählen</option>
+              </select>
+              <textarea class="form-control" id="translationTarget" rows="10"></textarea>
+            </div>
+          </div>
         </div>
+
         <div class="alert alert-info alert-dismissible text-start">
           Willkommen beim Übersetzungsdienst von re@di.<br>
           Sie benötigen für Ihre Arbeit hin und wieder eine Software zum Übersetzen?<br>
@@ -54,25 +71,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
 
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col opacity-75">
-              <label for="translationSource" class="form-label">Zu übersetzender Text</label>
-              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="sourceLanguage">
-                <option selected>Bitte Sprache wählen</option>
-              </select>
-              <textarea class="form-control" id="translationSource" rows="10"></textarea>
-            </div>
-            <div class="col opacity-75">
-              <label for="translationTarget" class="form-label">Übersetzer Text</label>
-              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="targetLanguage">
-                <option selected>Bitte Sprache wählen</option>
-              </select>
-              <textarea class="form-control" id="translationTarget" rows="10"></textarea>
-            </div>
-          </div>
-        </div>
-    
 
       </div>
       <div class="card-footer">
