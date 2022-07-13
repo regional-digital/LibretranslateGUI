@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .card {
+        min-height: 100vh;
+        background: none;
+        background-image: url('images/readi_logo.jpg');
+      }
+      .card .card-header {
+        background-color:darkgreen;
+      }
+      .card-footer {
+        background-color:darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+ 
+    <div class="card text-center">
+      <div class="card-header">
+        <h1>re@di2Translate</h1>
+      </div>
+      <div class="card-body">
+
+        <div class="jumbotron text-center">
+        </div>
+        <div class="alert alert-info alert-dismissible text-start">
+          Willkommen beim Übersetzungsdienst von re@di.<br>
+          Sie benötigen für Ihre Arbeit hin und wieder eine Software zum Übersetzen?<br>
+          Sie haben in Ihrem Verein mit geflüchteten zu tun und bei der Verwendung Cloud-basierter Übersetzungsdienste ist Ihnen nicht wohl, weil Sie nicht wissen, wohin die Daten, die Sie erfassen, bearbeitet werden?<br>
+          Dann sind Sie hier genau richtig.<br>
+          re@di hat für sich und die angeschlossenen Kommunen einen datenschutzkonformen, nicht-kommerziellen Übersetzungsdienst installiert und stellt diesen nach dem Public-Money, Public-Code-Gedanken allen zur Verfügung, die sich auch darauf verlassen wollen, dass die Daten nicht weiterverwertet werden.<br>
+          Wir erfassen absichtlich so wenig Telemetrie wie technisch möglich, weil wir überhaupt kein Interesse an Ihren Daten haben sondern nur sicherstellen wollen, dass unser Dienst funktioniert.<br>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <p></p>
+        </div>
+        <div class="alert alert-warning alert-dismissible text-start">
+          <strong>Haftungsausschluss!</strong><br>
+          re@di2Translate ist der Übersetzungsdienst, der von re@di kostenlos ohne ohne Gewähr zur Verfügung gestellt wird.<br>
+          Der Dienst basiert auf einem sog. neuronalen Netzwerk, das mit Trainingsdaten trainiert wurde und übersetzt im Hintergrund zunächst in die englische und dann wie viele andere Dienste auch in die ausgewählte Zielsprache.<br>
+          Aus diesem Grund gehen z.B. persönliche Anreden und ähnliche Inhalte verloren.<br>
+          Auch Eigennamen und die typische Behördensprache werden nur sehr unzuverlässig übersetzt.<br>
+          Aufgrund dieser und anderer Schwächen, die bei anderen auf schwacher KI basierenden Systeme auch auftrteten ist der Dienst nicht dazu geeignet, z.B. öffentliche Dokumente zuverlässig zu übersetzen und ersetzt in vielen Fällen nicht professionelle Übersetzungsdienstleistung.<br>
+          Sie verwenden diesen Dienst ausdrücklich auf eigene Gefahr und ohne Gewähr.<br>
+          re@di haftet nicht für Schäden, die aufgrund fehlerhafter oder unvollständiger Übersetzungen entstehen.<br>
+          <br>
+          Durch die Verwendung dieses Dienstes stimmen Sie dem Haftungsausschluss zu<br>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col opacity-75">
+              <label for="translationSource" class="form-label">Zu übersetzender Text</label>
+              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="sourceLanguage">
+                <option selected>Bitte Sprache wählen</option>
+              </select>
+              <textarea class="form-control" id="translationSource" rows="10"></textarea>
+            </div>
+            <div class="col opacity-75">
+              <label for="translationTarget" class="form-label">Übersetzer Text</label>
+              <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="targetLanguage">
+                <option selected>Bitte Sprache wählen</option>
+              </select>
+              <textarea class="form-control" id="translationTarget" rows="10"></textarea>
+            </div>
+          </div>
+        </div>
+    
+
+      </div>
+      <div class="card-footer">
+        Made with ❤ by <a href="//readi.de" target="_blank">re@di</a>, uses <a class="black-text" href="https://github.com/LibreTranslate/LibreTranslate" rel="noopener noreferrer">LibreTranslate</a> and powered by <a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>
+      </div>
+    </div>
+
+    
+
+  </body>
+  <script src="index.js"></script>
+</html>

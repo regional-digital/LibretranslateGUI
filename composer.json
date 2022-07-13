@@ -1,0 +1,28 @@
+{
+    "name": "alegab/libre-translate-gui",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Alegab\\LibreTranslateGui\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Gabriel",
+            "email": "alexander.gabriel@digital-infinity.de"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "^5.1",
+        "components/jquery": "^3.6"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist public/bootstrap",
+            "rm -rf public/jquery",
+            "mkdir public/jquery",
+            "cp vendor/components/jquery/jquery.* public/jquery"
+        ]
+    }
+}
