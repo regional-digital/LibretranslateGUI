@@ -25,7 +25,6 @@ $(document).ready(function(){
         , source: $('#sourceLanguage').val()
         , target: $('#targetLanguage').val()
         , format: 'html'
-        , api_key: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
       }
     }).done(function(data) {
       $('#translationTarget').val(data.translatedText);
