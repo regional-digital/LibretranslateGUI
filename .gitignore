@@ -1,3 +1,4 @@
 vendor
 public/jquery
 public/bootstrap
+node_modules
