@@ -19,6 +19,9 @@
     "scripts": {
         "post-update-cmd": [
             "rm -rf public/bootstrap",
+            "mkdir public/bootstrap",
+            "mkdir public/bootstrap/css",
+            "mkdir public/bootstrap/js",
             "cp -R vendor/twbs/bootstrap/dist public/bootstrap",
             "rm -rf public/jquery",
             "mkdir public/jquery",
