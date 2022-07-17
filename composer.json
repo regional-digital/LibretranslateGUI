@@ -25,7 +25,10 @@
             "cp -R vendor/twbs/bootstrap/dist public/bootstrap",
             "rm -rf public/jquery",
             "mkdir public/jquery",
-            "cp vendor/components/jquery/jquery.* public/jquery"
+            "cp vendor/components/jquery/jquery.* public/jquery",
+            "rm -f public/simple-keyboard.*",
+            "cp node_modules/simple-keyboard/build/index.js public/simple-keyboard.js",
+            "cp node_modules/simple-keyboard/build/css/index.css public/simple-keyboard.css"
         ]
     }
 }
