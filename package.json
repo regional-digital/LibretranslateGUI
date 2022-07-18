@@ -1,5 +1,24 @@
 {
   "dependencies": {
-    "simple-keyboard": "^3.4.125"
-  }
+    "simple-keyboard": "^3.4.125",
+    "simple-keyboard-layouts": "^3.1.149"
+  },
+  "name": "libretranslategui",
+  "description": "not-so-technical gui for libretanslate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regional-digital/LibretranslateGUI.git"
+  },
+  "author": "Alexander Gabriel",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/regional-digital/LibretranslateGUI/issues"
+  },
+  "homepage": "https://github.com/regional-digital/LibretranslateGUI#readme"
 }

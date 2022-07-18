@@ -18,17 +18,17 @@
     },
     "scripts": {
         "post-update-cmd": [
+            "mkdir public/js",
             "rm -rf public/bootstrap",
-            "mkdir public/bootstrap",
-            "mkdir public/bootstrap/css",
-            "mkdir public/bootstrap/js",
             "cp -R vendor/twbs/bootstrap/dist public/bootstrap",
             "rm -rf public/jquery",
             "mkdir public/jquery",
             "cp vendor/components/jquery/jquery.* public/jquery",
             "rm -f public/simple-keyboard.*",
             "cp node_modules/simple-keyboard/build/index.js public/simple-keyboard.js",
-            "cp node_modules/simple-keyboard/build/css/index.css public/simple-keyboard.css"
+            "cp node_modules/simple-keyboard/build/css/index.css public/simple-keyboard.css",
+            "rm -f public/js/simple-keyboard-layouts",
+            "cp -R node_modules/simple-keyboard-layouts public/js/"
         ]
     }
 }
