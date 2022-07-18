@@ -64,13 +64,13 @@ $(document).ready(function(){
     $('#exampleModal').modal('show');
   }
 
-  console.log(getParameter("keyboard"));
   if(getParameter("keyboard") != "false") {
     document.querySelector("#keyboardSelect").value = getParameter("keyboard");
   }
 
-  keyboardLayout = getParameter("keyboard");
-  if (keyboardLayout != 'off') {
+  keyboardLayout = $("#keyboardSelect").val();
+
+  if (keyboardLayout != 'off' && keyboardLayout != null) {
     let Keyboard = window.SimpleKeyboard.default;
     let KeyboardLayouts = window.SimpleKeyboardLayouts.default;
     let layout = new KeyboardLayouts().get(keyboardLayout);
