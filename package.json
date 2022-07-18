@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
     "simple-keyboard": "^3.4.125",
     "simple-keyboard-layouts": "^3.1.149"
   },
@@ -7,7 +9,6 @@
   "description": "not-so-technical gui for libretanslate",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
