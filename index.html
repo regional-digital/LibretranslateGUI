@@ -8,27 +8,10 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/simple-keyboard/build/index.js"></script>
-    <link rel="stylesheet" href="node_modules/simple-keyboard/build/css/index.css">
     <script src="node_modules/simple-keyboard-layouts/build/index.js"></script>
+    <link rel="stylesheet" href="node_modules/simple-keyboard/build/css/index.css">
 
-    <link rel="stylesheet" href="src/simple-keyboard2.css">
-    <style>
-      .card {
-        min-height: 100vh;
-        background: none;
-        background-image: url('src/images/readi_background.jpg');
-      }
-      .card .card-header {
-        background-color:white;
-      }
-      .card-footer {
-        background-color:white;
-      }
-      h1 {
-        color: black;
-        font-family:Arial, Helvetica, sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="src/libretranslategui.css">
   </head>
   <body>
     <header>
@@ -43,9 +26,7 @@
           </div>
         </div>
       </nav>
-
     </header>
- 
     <div class="card text-center">
       <div class="card-body">
 
@@ -56,7 +37,6 @@
           Dann sind Sie hier genau richtig.<br>
           re@di hat für sich und die angeschlossenen Kommunen einen datenschutzkonformen, nicht-kommerziellen Übersetzungsdienst installiert und stellt diesen nach dem Public-Money, Public-Code-Gedanken allen zur Verfügung, die sich auch darauf verlassen wollen, dass die Daten nicht weiterverwertet werden.<br>
           Wir erfassen absichtlich so wenig Telemetrie wie technisch möglich, weil wir überhaupt kein Interesse an Ihren Daten haben sondern nur sicherstellen wollen, dass unser Dienst funktioniert.<br>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           <p></p>
         </div>
 
@@ -68,7 +48,7 @@
               <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="sourceLanguage">
                 <option selected>Bitte Sprache wählen</option>
               </select>
-              <textarea class="form-control input" id="translationSource" rows="10"></textarea>
+              <textarea class="form-control" id="translationSource" rows="10"></textarea>
             </div>
             <div class="col opacity-75">
               <label for="translationTarget" class="form-label">Übersetzer Text</label>
@@ -79,41 +59,88 @@
             </div>
           </div>
           <div class="col form-control">
-            <form action="index.html" method="get">
+            <form name="state" action="index.html" method="get">
               Keyboard: <select name="keyboard" id="keyboardSelect">
                 <option value="off">aus</option>
-                <option value="default">Standard</option>
+                <option value="german">Deutsch</option>
                 <option value="russian">russian</option>
-                <option value="russion">japanese</option>
+                <option value="russianOld">russianOld</option>
+                <option value="arabic">arabic</option>
+                <option value="assamese">assamese</option>
+                <option value="belarusian">belarusian</option>
+                <option value="bengali">bengali</option>
+                <option value="burmese">burmese</option>
+                <option value="chinese">chinese</option>
+                <option value="czech">czech</option>
+                <option value="english">english</option>
+                <option value="farsi">farsi</option>
+                <option value="french">french</option>
+                <option value="georgian">georgian</option>
+                <option value="gilaki">gilaki</option>
+                <option value="greek">greek</option>
+                <option value="hebrew">hebrew</option>
+                <option value="hindi">hindi</option>
+                <option value="hungarian">hungarian</option>
+                <option value="italian">italian</option>
+                <option value="japanese">japanese</option>
+                <option value="kannada">kannada</option>
+                <option value="korean">korean</option>
+                <option value="malayalam">malayalam</option>
+                <option value="nigerian">nigerian</option>
+                <option value="nko">nko</option>
+                <option value="norwegian">norwegian</option>
+                <option value="polish">polish</option>
+                <option value="sindhi">sindhi</option>
+                <option value="spanish">spanish</option>
+                <option value="swedish">swedish</option>
+                <option value="thai">thai</option>
+                <option value="turkish">turkish</option>
+                <option value="ukrainian">ukrainian</option>
+                <option value="urdu">urdu</option>
+                <option value="uyghur">uyghur</option>
               </select>
+              <input type="hidden" name="disclaimeraccepted" value="false">
             </form>
           </div>
           <div class="simple-keyboard"></div>
         </div>
-        <br>
-
-        <div class="alert alert-warning alert-dismissible text-start">
-          <strong>Haftungsausschluss!</strong><br>
-          re@di2Translate ist der Übersetzungsdienst, der von re@di kostenlos ohne ohne Gewähr zur Verfügung gestellt wird.<br>
-          Der Dienst basiert auf einem sog. neuronalen Netzwerk, das mit Trainingsdaten trainiert wurde und übersetzt im Hintergrund zunächst in die englische und dann wie viele andere Dienste auch in die ausgewählte Zielsprache.<br>
-          Aus diesem Grund gehen z.B. persönliche Anreden und ähnliche Inhalte verloren.<br>
-          Auch Eigennamen und die typische Behördensprache werden nur sehr unzuverlässig übersetzt.<br>
-          Aufgrund dieser und anderer Schwächen, die bei anderen auf schwacher KI basierenden Systeme auch auftrteten ist der Dienst nicht dazu geeignet, z.B. öffentliche Dokumente zuverlässig zu übersetzen und ersetzt in vielen Fällen nicht professionelle Übersetzungsdienstleistung.<br>
-          Sie verwenden diesen Dienst ausdrücklich auf eigene Gefahr und ohne Gewähr.<br>
-          re@di haftet nicht für Schäden, die aufgrund fehlerhafter oder unvollständiger Übersetzungen entstehen.<br>
-          <br>
-          Durch die Verwendung dieses Dienstes stimmen Sie dem Haftungsausschluss zu<br>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
-
       </div>
       <div class="card-footer">
         Made with ❤ by <a href="//readi.de" target="_blank">re@di</a>, uses <a class="black-text" href="https://github.com/LibreTranslate/LibreTranslate" rel="noopener noreferrer">LibreTranslate</a> and powered by <a class="white-text text-lighten-3" href="https://github.com/argosopentech/argos-translate/" rel="noopener noreferrer">Argos Translate</a>
       </div>
     </div>
 
-    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Haftungsausschluss!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="acceptDisclaimer1">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            re@di2Translate ist der Übersetzungsdienst, der von re@di kostenlos ohne ohne Gewähr zur Verfügung gestellt wird.<br>
+            Der Dienst basiert auf einem sog. neuronalen Netzwerk, das mit Trainingsdaten trainiert wurde und übersetzt im Hintergrund zunächst in die englische und dann wie viele andere Dienste auch in die ausgewählte Zielsprache.<br>
+            Aus diesem Grund gehen z.B. persönliche Anreden und ähnliche Inhalte verloren.<br>
+            Auch Eigennamen und die typische Behördensprache werden nur sehr unzuverlässig übersetzt.<br>
+            Aufgrund dieser und anderer Schwächen, die bei anderen auf schwacher KI basierenden Systeme auch auftrteten ist der Dienst nicht dazu geeignet, z.B. öffentliche Dokumente zuverlässig zu übersetzen und ersetzt in vielen Fällen nicht professionelle Übersetzungsdienstleistung.<br>
+            Sie verwenden diesen Dienst ausdrücklich auf eigene Gefahr und ohne Gewähr.<br>
+            re@di haftet nicht für Schäden, die aufgrund fehlerhafter oder unvollständiger Übersetzungen entstehen.<br>
+            <br>
+            Durch die Verwendung dieses Dienstes stimmen Sie dem Haftungsausschluss zu.<br>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal" id="acceptDisclaimer2">Schließen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
   </body>
   <script src="src/index.js"></script>

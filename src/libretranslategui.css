@@ -1,0 +1,18 @@
+.card {
+    min-height: 89vh;
+    background: none;
+    background-image: url('images/readi_background.jpg');
+}
+.card .card-header {
+    background-color:white;
+}
+.card-footer {
+    background-color:white;
+}
+h1 {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#disclaimerDiv {
+    visibility: hidden;
+}
