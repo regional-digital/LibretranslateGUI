@@ -1,49 +1,15 @@
-function generateKeyboard(layout = false) {
-  const Keyboard = window.SimpleKeyboard.default;
-  const defaultTheme = "hg-theme-default";
-
-  if(layout) {
-    const KeyboardLayouts = window.SimpleKeyboardLayouts.default;
-    const layout = new KeyboardLayouts().get(layout);
-    const myKeyboard = new Keyboard({
-      onChange: input => onChange(input),
-      onKeyPress: button => onKeyPress(button),
-      ...layout
-    });
-  } else {
-    const myKeyboard = new Keyboard({
-      onChange: input => onChange(input),
-      onKeyPress: button => onKeyPress(button)
-    });
+function getParameter(parameter) {
+  let urlString = window.location.href;
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  for(let pair of queryString.entries()) {
+    if(pair[0] == parameter) return pair[1];
   }
-  
-  function onChange(input) {
-    document.querySelector(".input").value = input;
-    console.log("Input changed", input);
-  }
-  
-  function onKeyPress(button) {
-    console.log("Button pressed", button);
-  }
-  
-  function showKeyboard() {
-    console.log("showKeyboard");
-    myKeyboard.setOptions({
-      theme: `${defaultTheme} show-keyboard`
-    });
-  }
-  
-  function hideKeyboard() {
-    console.log("hideKeyboard");
-    myKeyboard.setOptions({
-      theme: defaultTheme
-    });
-  }
+  return false;
 }
 
+
 $(document).ready(function(){
-
-
   $.get("/languages",
   function(data) {
     var sel = $("#sourceLanguage");
@@ -77,15 +43,86 @@ $(document).ready(function(){
   });
 
   $('#keyboardSelect').on('change', function() {
-    keyboardSelectValue = $('#keyboardSelect').val();
-    console.log("keyboardSelect changed: "+keyboardSelectValue);
-    if(keyboardSelectValue == "off") {
-    }
-    else if (keyboardSelectValue == "default") {
-    }
-    else {
-      hideKeyboard();
-      generateKeyboard(keyboardSelectValue);
-    }
+    document.forms.state.submit();
   });
+
+  $('#acceptDisclaimer1').on('click', function() {
+    document.forms.state.disclaimeraccepted.value = "true";
+    $('#exampleModal').modal('hide');
+  });
+
+  $('#acceptDisclaimer2').on('click', function() {
+    document.forms.state.disclaimeraccepted.value = "true";
+    $('#exampleModal').modal('hide');
+  });
+
+  console.log(getParameter("disclaimeraccepted"));
+  if(getParameter("disclaimeraccepted") == "true") {
+    document.forms.state.disclaimeraccepted.value = true;
+  }
+  else {
+    $('#exampleModal').modal('show');
+  }
+
+  console.log(getParameter("keyboard"));
+  if(getParameter("keyboard") != "false") {
+    document.querySelector("#keyboardSelect").value = getParameter("keyboard");
+  }
+
+  keyboardLayout = getParameter("keyboard");
+  if(keyboardLayout == "default") {
+    let Keyboard = window.SimpleKeyboard.default;
+    let keyboard = new Keyboard({
+      onChange: input => onChange(input),
+      onKeyPress: button => onKeyPress(button)
+    });
+
+    document.querySelector("#translationSource").addEventListener("input", event => {
+      keyboard.setInput(event.target.value);
+    });
+    function onChange(input) {
+      document.querySelector("#translationSource").value = input;
+      console.log("Input changed", input);
+      $('#translationSource').trigger("keyup");
+    }
+
+    function onKeyPress(button) {
+      console.log("Button pressed", button);
+      $('#translationSource').trigger("keyup");
+    }
+  }
+  else if (keyboardLayout != 'off') {
+
+    let Keyboard = window.SimpleKeyboard.default;
+    let KeyboardLayouts = window.SimpleKeyboardLayouts.default;
+    let layout = new KeyboardLayouts().get(keyboardLayout);
+    let keyboard = new Keyboard({
+      onChange: input => onChange(input),
+      onKeyPress: button => onKeyPress(button),
+      ...layout
+    });
+
+    document.querySelector("#translationSource").addEventListener("input", event => {
+      keyboard.setInput(event.target.value);
+    });
+    function onChange(input) {
+      document.querySelector("#translationSource").value = input;
+      console.log("Input changed", input);
+      $('#translationSource').trigger("keyup");
+    }
+
+    function onKeyPress(button) {
+      console.log("Button pressed", button);
+      $('#translationSource').trigger("keyup");
+    }
+
+
+
+
+
+
+  }
+
+
+
 });
