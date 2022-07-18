@@ -70,29 +70,7 @@ $(document).ready(function(){
   }
 
   keyboardLayout = getParameter("keyboard");
-  if(keyboardLayout == "default") {
-    let Keyboard = window.SimpleKeyboard.default;
-    let keyboard = new Keyboard({
-      onChange: input => onChange(input),
-      onKeyPress: button => onKeyPress(button)
-    });
-
-    document.querySelector("#translationSource").addEventListener("input", event => {
-      keyboard.setInput(event.target.value);
-    });
-    function onChange(input) {
-      document.querySelector("#translationSource").value = input;
-      console.log("Input changed", input);
-      $('#translationSource').trigger("keyup");
-    }
-
-    function onKeyPress(button) {
-      console.log("Button pressed", button);
-      $('#translationSource').trigger("keyup");
-    }
-  }
-  else if (keyboardLayout != 'off') {
-
+  if (keyboardLayout != 'off') {
     let Keyboard = window.SimpleKeyboard.default;
     let KeyboardLayouts = window.SimpleKeyboardLayouts.default;
     let layout = new KeyboardLayouts().get(keyboardLayout);
@@ -115,14 +93,5 @@ $(document).ready(function(){
       console.log("Button pressed", button);
       $('#translationSource').trigger("keyup");
     }
-
-
-
-
-
-
   }
-
-
-
 });
