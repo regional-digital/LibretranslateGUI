@@ -41,9 +41,6 @@ function generateKeyboard(layout = false) {
   }
 }
 
-generateKeyboard();
-hideKeyboard();
-
 $(document).ready(function(){
 
 
@@ -83,11 +80,8 @@ $(document).ready(function(){
     keyboardSelectValue = $('#keyboardSelect').val();
     console.log("keyboardSelect changed: "+keyboardSelectValue);
     if(keyboardSelectValue == "off") {
-      hideKeyboard();
     }
     else if (keyboardSelectValue == "default") {
-      hideKeyboard();
-      generateKeyboard();
     }
     else {
       hideKeyboard();
