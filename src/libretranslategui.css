@@ -16,3 +16,7 @@ h1 {
 #disclaimerDiv {
     visibility: hidden;
 }
+#translationSource {
+    color: green;
+    font-weight:bold;
+}
