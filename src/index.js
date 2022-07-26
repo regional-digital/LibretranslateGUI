@@ -21,7 +21,7 @@ $(document).ready(function(){
     var sel = $("#targetLanguage");
     sel.empty();
     for (var i=0; i<data.length; i++) {
-      if(data[i].code == 'es') sel.append('<option value="' + data[i].code + '" selected>' + data[i].name + '</option>');
+      if(data[i].code == 'en') sel.append('<option value="' + data[i].code + '" selected>' + data[i].name + '</option>');
       else sel.append('<option value="' + data[i].code + '">' + data[i].name + '</option>');
     }
   }, "json");
