@@ -8,6 +8,13 @@ function getParameter(parameter) {
   return false;
 }
 
+var typewatch = function(){
+  var timer = 0;
+  return function(callback, ms){
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+  }  
+}();    
 
 $(document).ready(function(){
   $.get("/languages",
@@ -27,22 +34,24 @@ $(document).ready(function(){
   }, "json");
 
   $('#translationSource').on('keyup', function() {
-    $.ajax({
-      url: "/translate"
-      , context: document.body
-      , method: 'POST'
-      , data: {
-        'q' : $('#translationSource').val()
-        , source: $('#sourceLanguage').val()
-        , target: $('#targetLanguage').val()
-        , format: 'html'
-      }
-    }).done(function(data) {
-      $('#translationTarget').val(data.translatedText);
-    });
+    typewatch(function(){
+      $.ajax({
+        url: "/translate"
+        , context: document.body
+        , method: 'POST'
+        , data: {
+          'q' : $('#translationSource').val()
+          , source: $('#sourceLanguage').val()
+          , target: $('#targetLanguage').val()
+          , format: 'html'
+        }
+      }).done(function(data) {
+        $('#translationTarget').val(data.translatedText);
+      });
+      }, 500 );
   });
 
-  $('#keyboardSelect').on('change', function() {
+$('#keyboardSelect').on('change', function() {
     document.forms.state.submit();
   });
 
